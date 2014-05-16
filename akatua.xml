@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<install version="1.5" type="plugin" group="vmpayment" >
+	<name>Akatua Gateway</name>
+	<creationDate>May 06 2014</creationDate>
+	<author>Laila Alhassan</author>
+	<authorUrl>https://www.akatua.com</authorUrl>
+	<copyright>Copyright (C) 2014 Laila Alhassan. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<version>1.0.1</version>
+	<description><![CDATA[<a href="http://www.akatua.com" target="_blank">Akatua</a> is a simple payment solution in Ghana. ]]></description>
+
+	<files>
+		<filename plugin="akatua">akatua.php</filename>
+	</files>
+
+	<media folder="images" destination="../images/stories/virtuemart/payment">
+		<filename>akatua.png</filename>
+	</media>
+
+	<languages>
+		<language tag="en-GB">en-GB.plg_vmpayment_akatua.ini</language>
+	</languages>
+
+	<params addpath="/administrator/components/com_virtuemart/elements">
+		<param type="vmjpluginwarning" />
+		<param type="spacer" default="VMPAYMENT_AKATUA_PAYMENT_TITLE" level="level1" />
+		<param type="spacer" default="VMPAYMENT_AKATUA_PAYMENT_WARNING"   />
+
+		<param type="spacer" default="" level="level1" />
+		<param type="spacer" default="VMPAYMENT_AKATUA_PAYMENT_SETTINGS" level="level1" />
+		<param name="payment_logos" type="vmfiles" label="VMPAYMENT_AKATUA_LOGOS" description="VMPAYMENT_AKATUA_LOGOS_DESC" directory="/images/stories/virtuemart/payment" default="akatua.png" hide_default="0" hide_none="1" stripext="0"  exclude="^_" />
+
+		<param type="spacer" default="" level="level1" />
+		<param type="spacer" default="VMPAYMENT_AKATUA_PARAMS" level="level1" />
+		<param type="text" name="akatua_application_id"  size="50" label="VMPAYMENT_AKATUA_APPLICATION_ID" default="" description="" />
+		<param type="text" name="akatua_application_secret"  size="50" label="VMPAYMENT_AKATUA_APPLICATION_SECRET" default="" description="" />
+		<param type="text" name="akatua_logo_url"  size="50" label="VMPAYMENT_AKATUA_LOGO_URL" default="" description="VMPAYMENT_AKATUA_LOGO_URL_DESC" />
+		<param type="radio" name="mode" default="test" label="VMPAYMENT_AKATUA_MODE" description="VMPAYMENT_AKATUA_MODE_DESC" >
+			<option value="test">Test</option>
+			<option value="live">Live</option>
+		</param>
+
+		<param type="spacer" default="" level="level1" />
+		<param type="spacer" default="VMPAYMENT_AKATUA_RESTRICTIONS" level="level1" />
+		<param name="payment_currency" type="vmacceptedcurrency" default="" label="VMPAYMENT_AKATUA_CURRENCY" description="VMPAYMENT_AKATUA_CURRENCY_DESC" />
+		<param name="countries" type="vmcountries"  scope="com_virtuemart" default="" label="VMPAYMENT_AKATUA_COUNTRIES" description="VMPAYMENT_AKATUA_COUNTRIES_DESC"/>
+		<param name="min_amount" type="text"  label="VMPAYMENT_AKATUA_MIN_AMOUNT" description="VMPAYMENT_AKATUA_MIN_AMOUNT_EXPLAIN" />
+		<param name="max_amount" type="text"  label="VMPAYMENT_AKATUA_MAX_AMOUNT" description="VMPAYMENT_AKATUA_MAX_AMOUNT_EXPLAIN" />
+		<param name="cost_per_transaction" type="text"  label="VMPAYMENT_AKATUA_COST_PER_TRANSACTION" description="VMPAYMENT_AKATUA_COST_PER_TRANSACTION_EXPLAIN" />
+		<param name="cost_percent_total" type="text"  label="VMPAYMENT_AKATUA_COST_PERCENT_TOTAL" description="VMPAYMENT_AKATUA_COST_PERCENT_TOTAL_EXPLAIN" />
+		<param name="tax_id" type="vmtaxes" scope="com_virtuemart"  label="VMPAYMENT_AKATUA_TAX" description="VMPAYMENT_AKATUA_TAX_EXPLAIN" />
+
+		<param type="spacer" default="" level="level1" />
+		<param type="spacer" default="VMPAYMENT_AKATUA_PAYMENT_PAGE" level="level1" />
+		<param name="status_pending" type="vmorderstate" scope="com_virtuemart" default="P" label="VMPAYMENT_AKATUA_STATUS_PENDING" description="VMPAYMENT_AKATUA_STATUS_PENDING_EXPLAIN" />
+		<param name="status_success" type="vmorderstate" scope="com_virtuemart" default="C" label="VMPAYMENT_AKATUA_STATUS_SUCCESS" description="VMPAYMENT_AKATUA_STATUS_SUCCESS_EXPLAIN" />
+		<param name="status_canceled" type="vmorderstate" scope="com_virtuemart" default="X" label="VMPAYMENT_AKATUA_STATUS_FAILED" description="VMPAYMENT_AKATUA_STATUS_FAILED_EXPLAIN" />
+
+		<param type="spacer" default="" level="level1" />
+		<param name="debug" type="radio" default="0" label="VMPAYMENT_AKATUA_DEBUG" description="VMPAYMENT_AKATUA_DEBUG_DESC" >
+			<option value="0">COM_VIRTUEMART_NO</option>
+			<option value="1">COM_VIRTUEMART_YES</option>
+		</param>
+	</params>
+</install>
